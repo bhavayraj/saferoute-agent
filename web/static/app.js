@@ -35,8 +35,8 @@ function initMap() {
   if (window.L) {
     try {
       leafletMap = L.map("map", { zoomControl: true }).setView([12.99, 77.57], 13);
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        maxZoom: 19, attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19, attribution: "&copy; OpenStreetMap contributors ",
       }).addTo(leafletMap);
       leafletMap.on("click", (e) => setReportPoint(e.latlng.lat, e.latlng.lng));
       return;
