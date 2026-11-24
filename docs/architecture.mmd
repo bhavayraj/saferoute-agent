@@ -1,0 +1,11 @@
+flowchart LR
+  U["User<br/>'Safest route from MSRIT<br/>to Majestic at 10 PM'"] --> W["Web app / CLI<br/>Leaflet map · route cards · SOS"]
+  W --> A["SafeRoute Agent (MCP host)<br/>planner mode or LLM mode<br/>(any OpenAI-compatible model)"]
+  A -- "MCP over stdio" --> R["Routes & Weather MCP<br/>geocode · get_routes · get_weather"]
+  A -- "MCP over stdio" --> S["Safety Analysis MCP (custom)<br/>analyze_route · get_safety_score<br/>check_unsafe_zones · report_unsafe_location"]
+  A -- "MCP over stdio<br/>confirm=true only after user tap" --> E["Emergency Assistance MCP (custom)<br/>get_emergency_contacts · share_live_location<br/>notify_emergency_contacts"]
+  R --> R1[("OSRM routing<br/>Nominatim · Open-Meteo<br/>(OpenStreetMap)")]
+  S --> S1[("Safety dataset<br/>lighting · activity · help points<br/>CCTV · incidents + community reports")]
+  E --> E1[("Trusted contacts<br/>simulated outbox log")]
+  A --> O["Ranked routes + safety score /10<br/>reasons · data coverage · caution spots"]
+  O --> W

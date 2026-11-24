@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafeRoute Agent: Personal Safety Navigation</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="logo">◆</span> SafeRoute <span class="tag">AI safety navigation agent · MCP</span></div>
+    <button id="sosBtn" class="sos" title="Emergency: share location with trusted contacts">SOS</button>
+  </header>
+
+  <main>
+    <aside>
+      <form id="tripForm">
+        <label for="query">Where are you going?</label>
+        <textarea id="query" rows="3">Find me the safest route from MSRIT to Majestic at 10 PM</textarea>
+        <div class="row">
+          <select id="mode" title="How the agent reasons">
+            <option value="planner">Agent: planner mode</option>
+            <option value="llm" disabled>Agent: LLM mode (not configured)</option>
+          </select>
+          <button type="submit" id="goBtn" class="go">Find safest route</button>
+        </div>
+        <p class="hint">Try: “from Yeshwanthpur to Malleshwaram at 9 pm” · add “by cab” for car routes</p>
+      </form>
+
+      <div id="status" class="status hidden"></div>
+      <section id="results" class="hidden">
+        <div id="recommend" class="recommend"></div>
+        <div id="cards"></div>
+        <details open>
+          <summary>Why this score?</summary>
+          <ul id="why"></ul>
+        </details>
+        <details>
+          <summary>Agent trace: MCP tool calls (<span id="traceCount">0</span>)</summary>
+          <ol id="trace"></ol>
+        </details>
+      </section>
+
+      <section class="report">
+        <h3>Report an unsafe spot</h3>
+        <p class="hint">Click the map to choose the spot. <span id="reportPos">No spot selected.</span></p>
+        <div class="row">
+          <select id="reportCat">
+            <option value="poor_lighting">Poor lighting</option>
+            <option value="isolated">Isolated</option>
+            <option value="harassment">Harassment</option>
+            <option value="theft">Theft</option>
+            <option value="accident_prone">Accident-prone</option>
+            <option value="other">Other</option>
+          </select>
+          <button id="reportBtn" class="secondary">Submit report</button>
+        </div>
+        <input id="reportDesc" maxlength="280" placeholder="Short description (optional)">
+        <div id="reportMsg" class="hint"></div>
+      </section>
+    </aside>
+
+    <section class="mapwrap">
+      <div id="map"></div>
+      <div id="svgmap" class="hidden"></div>
+      <div id="mapNote" class="mapnote hidden"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h2>Emergency assistance</h2>
+      <p id="sosLoc" class="hint"></p>
+      <div id="sosContacts"></div>
+      <textarea id="sosMsg" rows="2" placeholder="Optional message">I need help.</textarea>
+      <div id="sosPreview" class="preview hidden"></div>
+      <div class="row">
+        <button id="sosPreviewBtn" class="sos-wide">Prepare SOS to all contacts</button>
+        <button id="sosConfirmBtn" class="sos-wide hidden">Confirm &amp; send</button>
+        <button id="sosClose" class="secondary">Close</button>
+      </div>
+      <p class="hint">Nothing is sent until you press <b>Confirm &amp; send</b>. Prototype: delivery is simulated and logged to <code>data/outbox/</code>.</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

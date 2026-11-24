@@ -1,0 +1,8 @@
+{
+  "_note": "Example contacts. On first run this file is copied to data/emergency_contacts.json (git-ignored). Edit that copy with your real trusted contacts.",
+  "trusted_contacts": [
+    {"name": "Amma", "relation": "Parent", "phone": "+91 90000 00001"},
+    {"name": "Roommate", "relation": "Friend", "phone": "+91 90000 00002"}
+  ],
+  "national_helpline": {"name": "India Emergency Response Support System", "number": "112"}
+}

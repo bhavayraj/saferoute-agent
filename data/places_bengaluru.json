@@ -1,0 +1,24 @@
+{
+  "_note": "Small offline gazetteer of well-known Bengaluru places with approximate coordinates. Used for geocoding when live geocoding is off or unavailable.",
+  "places": [
+    {"name": "MSRIT", "aliases": ["ramaiah institute of technology", "ms ramaiah institute of technology", "msrit college", "ramaiah college", "college"], "lat": 13.0306, "lon": 77.5649},
+    {"name": "Majestic (Kempegowda Bus Station)", "aliases": ["majestic", "kempegowda bus station", "kbs", "majestic bus stand"], "lat": 12.9774, "lon": 77.5713},
+    {"name": "KSR Bengaluru City Railway Station", "aliases": ["city railway station", "ksr station", "bangalore city station"], "lat": 12.9781, "lon": 77.5695},
+    {"name": "MG Road", "aliases": ["mg road metro", "mahatma gandhi road"], "lat": 12.9755, "lon": 77.6068},
+    {"name": "Malleshwaram", "aliases": ["malleswaram"], "lat": 13.0050, "lon": 77.5700},
+    {"name": "Yeshwanthpur", "aliases": ["yeshwantpur", "yesvantpur"], "lat": 13.0237, "lon": 77.5503},
+    {"name": "Hebbal", "aliases": ["hebbal flyover"], "lat": 13.0358, "lon": 77.5970},
+    {"name": "Indiranagar", "aliases": ["indira nagar"], "lat": 12.9719, "lon": 77.6412},
+    {"name": "Jayanagar", "aliases": ["jayanagar 4th block"], "lat": 12.9293, "lon": 77.5826},
+    {"name": "Koramangala", "aliases": [], "lat": 12.9352, "lon": 77.6245},
+    {"name": "Sadashivanagar", "aliases": ["sadashiva nagar"], "lat": 13.0068, "lon": 77.5813},
+    {"name": "Rajajinagar", "aliases": ["rajaji nagar"], "lat": 12.9915, "lon": 77.5546},
+    {"name": "Cubbon Park", "aliases": [], "lat": 12.9763, "lon": 77.5929},
+    {"name": "Mathikere", "aliases": [], "lat": 13.0329, "lon": 77.5614},
+    {"name": "Vidhana Soudha", "aliases": [], "lat": 12.9796, "lon": 77.5907},
+    {"name": "Bangalore Palace", "aliases": ["bengaluru palace"], "lat": 12.9987, "lon": 77.5920},
+    {"name": "Sankey Tank", "aliases": ["sankey"], "lat": 13.0094, "lon": 77.5741},
+    {"name": "Mekhri Circle", "aliases": ["mekri circle"], "lat": 13.0143, "lon": 77.5838},
+    {"name": "Orion Mall", "aliases": ["orion"], "lat": 13.0108, "lon": 77.5550}
+  ]
+}
