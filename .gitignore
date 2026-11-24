@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+Thumbs.db
+# runtime data (personal / generated)
+data/emergency_contacts.json
+data/community_reports.json
+data/outbox/

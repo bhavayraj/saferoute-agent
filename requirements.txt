@@ -1,0 +1,6 @@
+# Only one direct dependency: the official Model Context Protocol Python SDK.
+# It also installs starlette and uvicorn, which the web app uses.
+# Tested with mcp 2.3.0; the code also supports the mcp 1.x API.
+mcp>=1.10,<3
+uvicorn
+starlette
